@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#c94f2d">
+  <title>Quán Ngon | Đặt món trực tuyến</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="customer">
+  <header class="site-header">
+    <a class="brand" href="#home"><span class="brand-mark">🍜</span><span><b id="brandName">QUÁN NGON</b><small>Món ngon mỗi ngày</small></span></a>
+    <nav class="desktop-nav" aria-label="Điều hướng chính">
+      <a href="#home" data-nav-view="home">Trang chủ</a><a href="#menu" data-nav-view="menu">Thực đơn</a><a href="#bestsellers" data-nav-view="bestsellers">Món bán chạy</a><a href="#offers" data-nav-view="offers">Khuyến mãi</a><a href="#contact" data-nav-view="contact">Liên hệ</a><a href="#reviews" data-nav-view="reviews">Đánh giá</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" title="Đổi giao diện" aria-label="Đổi giao diện">◐</button>
+      <button class="icon-btn" id="favoritesToggle" title="Món yêu thích" aria-label="Món yêu thích">♡</button>
+      <button class="icon-btn cart-trigger" id="cartToggle" title="Giỏ hàng" aria-label="Giỏ hàng">🛒<span id="cartCount" class="count-badge">0</span></button>
+      <button class="icon-btn mobile-menu-btn" id="mobileMenuToggle" aria-label="Mở menu">☰</button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNav"><a href="#home" data-nav-view="home">Trang chủ</a><a href="#menu" data-nav-view="menu">Thực đơn</a><a href="#bestsellers" data-nav-view="bestsellers">Món bán chạy</a><a href="#offers" data-nav-view="offers">Khuyến mãi</a><a href="#contact" data-nav-view="contact">Liên hệ</a><a href="#reviews" data-nav-view="reviews">Đánh giá</a><a href="admin.html">Quản trị nhà hàng ↗</a></div>
+
+  <main>
+    <section class="hero customer-view" data-site-view="home" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="live-dot"></span> TƯƠI NGON MỖI NGÀY</span>
+        <h1>Món ngon mỗi ngày,<br><em>niềm vui trọn vị.</em></h1>
+        <p>Từ căn bếp ấm áp đến bàn ăn của bạn. Chọn món yêu thích và đặt chỉ trong vài thao tác.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#menu">Xem thực đơn <span>→</span></a><a class="text-link" href="#bestsellers">Khám phá món nổi bật ↗</a></div>
+        <div class="hero-stats"><div><b>40+</b><span>Món ngon</span></div><div><b>4.9/5</b><span>Đánh giá mẫu</span></div><div><b>30 phút</b><span>Giao dự kiến</span></div></div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=85" alt="Món ăn tươi ngon" onerror="this.src='https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=80'">
+        <div class="hero-note"><span class="note-icon">✦</span><span><b>Ngon từ nguyên liệu</b><small>Chuẩn bị khi bạn đặt món</small></span></div>
+        <div class="hero-sticker">MADE WITH<br><b>♥ CARE</b></div>
+      </div>
+    </section>
+
+    <section class="trust-strip customer-view" data-site-view="home">
+      <div><span>✦</span><b>Nguyên liệu tươi</b><small>Chọn lọc mỗi ngày</small></div><div><span>♨</span><b>Nấu khi đặt</b><small>Nóng hổi, trọn vị</small></div><div><span>⌁</span><b>Giao hàng tiện lợi</b><small>Theo dõi đơn dễ dàng</small></div><div><span>♡</span><b>Phục vụ tận tâm</b><small>Luôn lắng nghe bạn</small></div>
+    </section>
+
+    <section class="section menu-section customer-view" data-site-view="menu" id="menu">
+      <div class="section-heading"><div><span class="eyebrow">BẠN MUỐN ĂN GÌ HÔM NAY?</span><h2>Khám phá thực đơn</h2><p>Những món quen thuộc, hương vị khó quên.</p></div><button class="btn btn-outline" id="historyBtn">Đơn hàng đã đặt ↗</button></div>
+      <div class="search-row"><label class="search-box"><span>⌕</span><input id="foodSearch" type="search" placeholder="Tìm món ăn bạn yêu thích..." autocomplete="off"><kbd>⌘ K</kbd></label><select id="sortFoods" class="select-control" aria-label="Sắp xếp món"><option value="featured">Đề xuất</option><option value="priceAsc">Giá thấp đến cao</option><option value="priceDesc">Giá cao đến thấp</option><option value="rating">Đánh giá cao</option></select></div>
+      <div class="category-list" id="categoryList"></div>
+      <div class="menu-meta"><span id="foodResultCount">Đang tải thực đơn...</span><span class="tiny-note">Giá đã được niêm yết rõ ràng</span></div>
+      <div class="food-grid" id="foodGrid"></div>
+    </section>
+
+    <section class="bestseller-band customer-view" data-site-view="bestsellers" id="bestsellers"><div><span class="eyebrow">ĐƯỢC YÊU THÍCH</span><h2>Món ngon được gọi nhiều</h2><p>Gợi ý hấp dẫn để bữa ăn của bạn thêm trọn vẹn.</p></div><button class="btn btn-light" id="showPopular">Xem toàn bộ thực đơn →</button><div class="food-grid popular-food-grid" id="popularGrid"></div></section>
+    <section class="section offer-section customer-view" data-site-view="offers" id="offers"><div class="offer-card"><div><span class="eyebrow">ƯU ĐÃI DÀNH CHO BẠN</span><h2>Thêm niềm vui,<br>thêm ưu đãi.</h2><p>Nhập mã <b>WELCOME10</b> khi thanh toán để nhận ưu đãi mẫu 10%.</p><button class="btn btn-primary" id="copyCoupon">Sao chép mã <span>↗</span></button></div><div class="offer-art"><span>10<sup>%</sup></span><small>WELCOME OFFER</small></div></div></section>
+    <section class="section service-section customer-view" data-site-view="home"><div class="section-heading"><div><span class="eyebrow">ĐẶT MÓN THẬT DỄ DÀNG</span><h2>Bạn chọn, chúng tôi chuẩn bị</h2></div></div><div class="service-grid"><article><span>01</span><h3>Chọn món yêu thích</h3><p>Khám phá thực đơn, tùy chỉnh size và topping theo khẩu vị.</p></article><article><span>02</span><h3>Đặt món nhanh chóng</h3><p>Chọn giao tận nơi hoặc nhận tại quán với thông tin rõ ràng.</p></article><article><span>03</span><h3>Theo dõi đơn hàng</h3><p>Kiểm tra trạng thái đơn và xem lại lịch sử đặt món bất cứ lúc nào.</p></article></div></section>
+  </main>
+<section class="section reviews-section customer-view" data-site-view="reviews" id="reviews"><div class="section-heading"><div><span class="eyebrow">KHÁCH HÀNG NÓI GÌ</span><h2>Đánh giá từ khách hàng</h2><p>Những chia sẻ sau khi trải nghiệm món ăn tại Quán Ngon.</p></div><button class="btn btn-primary" id="reviewHistoryBtn">Đánh giá đơn đã hoàn thành</button></div><div id="customerReviews" class="customer-reviews-list"></div></section>
+<footer class="customer-view" data-site-view="contact" id="contact"><div class="footer-main"><a class="brand brand-footer" href="#home"><span class="brand-mark">🍜</span><span><b id="footerBrand">QUÁN NGON</b><small>Món ngon mỗi ngày</small></span></a><p>Những bữa ăn ngon bắt đầu từ sự chăm chút trong từng món.</p><div><b>Liên hệ</b><span id="footerAddress">Địa chỉ nhà hàng</span><span id="footerPhone">0900 000 000</span><span id="footerHours">08:00 – 22:00</span></div><div><b>Khám phá</b><a href="#menu">Thực đơn</a><a href="#offers">Khuyến mãi</a><a href="admin.html">Quản trị viên</a></div></div><div class="footer-bottom"><span>© 2026 Quán Ngon. Demo đặt món trực tuyến.</span><span>Được làm bằng sự tận tâm ♥</span></div></footer>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Giỏ hàng"><div class="drawer-head"><div><span class="eyebrow">ĐƠN CỦA BẠN</span><h2>Giỏ hàng <span id="drawerCartCount"></span></h2></div><button class="close-btn" id="closeCart" aria-label="Đóng">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-bottom"><div class="coupon-inline"><input id="couponInput" placeholder="Mã giảm giá"><button class="btn btn-outline" id="applyCoupon">Áp dụng</button></div><div class="totals"><div><span>Tạm tính</span><b id="subtotalValue">0đ</b></div><div><span>Phí giao hàng</span><b id="deliveryValue">0đ</b></div><div><span>Giảm giá</span><b id="discountValue">0đ</b></div><div class="grand-total"><span>Tổng cộng</span><b id="totalValue">0đ</b></div></div><button class="btn btn-primary btn-full" id="checkoutBtn">Tiến hành đặt món →</button><p class="fine-print">Bạn sẽ xác nhận thông tin trước khi tạo đơn.</p></div></aside>
+  <div class="overlay" id="overlay"></div>
+  <div class="modal-wrap" id="foodModal"><div class="modal modal-food"><button class="close-btn modal-close" data-close="foodModal">×</button><div id="foodModalContent"></div></div></div>
+  <div class="modal-wrap" id="checkoutModal"><div class="modal"><button class="close-btn modal-close" data-close="checkoutModal">×</button><span class="eyebrow">THÔNG TIN ĐẶT MÓN</span><h2>Hoàn tất đơn hàng</h2><form id="checkoutForm" class="form-grid"><label>Họ và tên *<input name="customerName" required placeholder="Nguyễn Văn A" maxlength="80"></label><label>Số điện thoại *<input name="phone" required inputmode="tel" pattern="[0-9+ .()-]{9,18}" placeholder="09xxxxxxxx"></label><fieldset class="full-span"><legend>Bạn muốn nhận món như thế nào?</legend><label class="radio-line"><input type="radio" name="fulfillment" value="delivery" checked> Giao tận nơi</label><label class="radio-line"><input type="radio" name="fulfillment" value="pickup"> Nhận tại quán</label></fieldset><label class="full-span" id="addressField">Địa chỉ giao hàng *<input name="address" placeholder="Số nhà, đường, phường/xã..."></label><label id="tableField" class="hidden">Chọn bàn<select name="table"><option value="">Chọn bàn</option></select></label><label>Thời gian nhận<select name="receiveTime"><option>Ngay khi có thể</option><option>Trong 30 phút</option><option>Trong 1 giờ</option></select></label><label class="full-span">Phương thức thanh toán<select name="payment"><option>Tiền mặt khi nhận món</option><option>Chuyển khoản ngân hàng</option><option>Thanh toán tại quán</option></select></label><label class="full-span">Ghi chú<textarea name="orderNote" rows="2" placeholder="Lưu ý cho nhà bếp..."></textarea></label><div class="checkout-summary full-span"><span>Tổng thanh toán</span><b id="checkoutTotal">0đ</b></div><button class="btn btn-primary btn-full full-span" id="placeOrderBtn" type="submit">Xác nhận đặt món</button><p class="fine-print full-span">Đơn hàng được gửi tới máy chủ của nhà hàng. Chuyển khoản cần nhà hàng xác nhận thủ công.</p></form></div></div>
+  <div class="modal-wrap" id="historyModal"><div class="modal modal-wide"><button class="close-btn modal-close" data-close="historyModal">×</button><span class="eyebrow" id="historyModalEyebrow">THEO DÕI VÀ XEM LẠI</span><h2 id="historyModalTitle">Đơn hàng đã đặt</h2><p class="muted" id="historyModalHint">Các đơn hàng đã đặt trên trình duyệt và thiết bị này. Không cần nhập số điện thoại.</p><div id="historyResults"></div></div></div>
+  <div class="modal-wrap" id="successModal"><div class="modal success-modal"><div class="success-icon">✓</div><span class="eyebrow">ĐẶT MÓN THÀNH CÔNG</span><h2>Cảm ơn bạn!</h2><p>Quán đã ghi nhận đơn hàng của bạn.</p><div class="success-order"><span>Mã đơn hàng</span><b id="successOrderId"></b><span>Tổng thanh toán</span><b id="successOrderTotal"></b></div><div id="bankTransferPanel" class="bank-transfer-panel hidden"></div><button class="btn btn-primary btn-full" data-close="successModal">Tiếp tục khám phá</button></div></div>
+  <div id="toastRegion" class="toast-region" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
